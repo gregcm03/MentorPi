@@ -964,25 +964,25 @@ def main(args=None):
     spin_thread.start()
     
     print("\n" + "="*60)
-    print("⚽ ROBOT SOCCER PLAYER ⚽")
+    print("ROBOT SOCCER PLAYER")
     print("="*60)
-    print("📋 FEATURES:")
-    print("  • Red ball detection and tracking")
-    print("  • Blue goal detection and targeting")
-    print("  • Orange opponent detection and avoidance")
-    print("  • Multiple soccer strategies")
-    print("  • Obstacle avoidance")
+    print("FEATURES:")
+    print("  Red ball detection and tracking")
+    print("  Blue goal detection and targeting")
+    print("  Orange opponent detection and avoidance")
+    print("  Multiple soccer strategies")
+    print("  Obstacle avoidance")
     print("="*60)
-    print("🔧 CONTROLS:")
+    print(" CONTROLS:")
     print("  • Press Enter to start playing soccer")
     print("  • Press 'q' or ESC in camera window to stop")
     print("  • Press Ctrl+C in terminal for emergency stop")
     print("="*60 + "\n")
     
     try:
-        input("⚽ PRESS ENTER TO START PLAYING SOCCER! ⚽")
+        input("PRESS ENTER TO START PLAYING SOCCER!")
     except KeyboardInterrupt:
-        print("\n⚠️ STARTUP ABORTED ⚠️")
+        print("\nSTARTUP ABORTED ")
         player.running = False
         player.stop_robot()
         rclpy.shutdown()
@@ -991,7 +991,7 @@ def main(args=None):
     try:
         player.run_soccer()
     except KeyboardInterrupt:
-        print("\n⚠️ GAME INTERRUPTED ⚠️")
+        print("\nGAME INTERRUPTED")
     finally:
         player.running = False
         player.stop_robot()
@@ -999,7 +999,7 @@ def main(args=None):
         rclpy.shutdown()
         spin_thread.join(timeout=1.0)
         cv2.destroyAllWindows()
-        print("\n✅ ROBOT STOPPED - GAME OVER ✅")
+        print("\nROBOT STOPPED - GAME OVER")
         print(f"Final Score: {player.goals_scored} goals scored")
 
 if __name__ == '__main__':
